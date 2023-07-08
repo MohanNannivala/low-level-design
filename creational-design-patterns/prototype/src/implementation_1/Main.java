@@ -18,5 +18,26 @@ public class Main {
             children.add(parents.clone());
         }
 
+        System.out.println("---------------Bird_Registry---------------------");
+
+        Sparrow sparrow = new Sparrow();
+        Crow crow = new Crow();
+
+        BirdRegistry birdRegistry = new BirdRegistry();
+
+        birdRegistry.registerBird("Sparrow", sparrow);
+        birdRegistry.registerBird("Crow", crow);
+
+        List<String> getBirdOfType = List.of(
+                "Sparrow",
+                "Crow"
+        );
+
+        List<Bird> requestedBird = new ArrayList<>();
+
+        for (String bird : getBirdOfType){
+            requestedBird.add(birdRegistry.getBird(bird).clone());
+        }
+
      }
 }
